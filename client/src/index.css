@@ -75,3 +75,23 @@ body {
   color: red;
   text-align: center;
 }
+
+.edit {
+  padding: 16px 22px;
+  background: dodgerblue;
+  color: white;
+  margin: 10px 10px 20px 0px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.delete {
+  padding: 16px 22px;
+  background: crimson;
+  color: white;
+  margin: 10px 10px 20px 0px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
