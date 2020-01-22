@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import MovieCard from "./MovieCard";
 export default class Movie extends React.Component {
@@ -42,6 +43,40 @@ export default class Movie extends React.Component {
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
+        <Link className="edit" to={`/update-movie/${this.state.movie.id}`}>
+          {" "}
+          Edit Movie
+        </Link>
+
+        <button
+          className="delete"
+          onClick={() => {
+            axios
+              .delete(`http://localhost:5000/api/movies/${this.state.movie.id}`)
+              .then(res => {
+                this.props.history.push("/");
+                console.log("res", res);
+              })
+              .catch(err => {
+                console.log("err", err);
+              });
+          }}
+        >
+          Delete Movie
+        </button>
+
+        {/* State Grabber */}
+        <br />
+        <br />
+        <br />
+        <br />
+        <button
+          onClick={() => {
+            console.log(this.state.movie.id);
+          }}
+        >
+          State
+        </button>
       </div>
     );
   }
